@@ -6,7 +6,7 @@
 Debido al uso de datos de diferente origen, es necesario limpiar, organizar y fusionar los conjuntos de datos usados. Esto inclye procesamiento de algunas columnas como la columna Date del dataset de temperaturas anómalas e identificar agrupaciones de países y variables de interes.
 </div>
 
-```{r Temperatura_Dataset, message=FALSE, warning=FALSE, echo=FALSE}
+```{r Temperatura_Dataset, message=FALSE, warning=FALSE}
 temperature_data$year = as.integer(substr(temperature_data$Date, 1, 4))
 temperature_data$month = as.integer(substr(temperature_data$Date, 5, 6))
 
@@ -60,7 +60,7 @@ Diferencias resaltables entre ambas curvas pueden ser que mientras que la curva 
 En la figura \@ref(fig:2), se puede  visualizar directamente la correlación entre ambas variables. Se evidencia una clara relación lineal positiva que complementa lo prensentado en la primera gráfica.
 </div>
 
-``` {r co2_vs_temp_processing, message=FALSE, warning=FALSE, echo=FALSE}
+``` {r co2_vs_temp_processing, message=FALSE, warning=FALSE}
 world_co2 <- emissions_data %>% filter(Code == "OWID_WRL")
 world_per_capita <- emissions_per_capita_data %>% filter(Code == "OWID_WRL")
 
@@ -77,7 +77,7 @@ scale_factor <- max(yearly_data$CO2_emissions, na.rm = TRUE) / max(yearly_data$m
 ```
 
 
-``` {r 1, fig.cap="Comportamiento anual de la Emisión total de CO~2~ y Temperatura Anómala", message=FALSE, warning=FALSE, echo=FALSE}
+``` {r 1, fig.cap="Comportamiento anual de la Emisión total de CO~2~ y Temperatura Anómala", message=FALSE, warning=FALSE}
 ggplot(yearly_data, aes(x = year)) +
   geom_point(aes(y = CO2_emissions, color = "Emisiones de CO~2~ (Toneladas)")) +
   geom_point(aes(y = mean_temperature_anomaly * scale_factor, color = "Temperatura Anomala (°C)")) +
@@ -90,7 +90,7 @@ ggplot(yearly_data, aes(x = year)) +
   theme(plot.title = element_text(hjust = 0.5))
 ```
 
-```{r 2, fig.cap="Gráfico de Dispersión de la Emisión Total de CO~2~ vs Temperatura Anómala", message=FALSE, warning=FALSE, echo=FALSE}
+```{r 2, fig.cap="Gráfico de Dispersión de la Emisión Total de CO~2~ vs Temperatura Anómala", message=FALSE, warning=FALSE}
 ggplot(yearly_data, aes(x = CO2_emissions, y = mean_temperature_anomaly)) +
   geom_point() +
   geom_smooth(method = "lm", se = FALSE) +
@@ -112,7 +112,7 @@ Tras establecer la relación entre las emisiones y el incremento en la temperatu
 * Los países de ingresos medios, especialmente medios-altos, muestran un crecimiento tardío pero pronunciado a partir de mediados del siglo XX, coincidiendo con procesos de industrialización acelerada. 
 * Los países de bajos ingresos mantienen niveles bajos de emisiones per cápita, con incrementos modestos en algunos casos.
 
-``` {r 4, fig.cap="Emisiones per Capita categorizadas por Grupo Económico", message=FALSE, warning=FALSE, echo=FALSE}
+``` {r 4, fig.cap="Emisiones per Capita categorizadas por Grupo Económico", message=FALSE, warning=FALSE}
 ggplot(income_data, aes(x = Year, y = `CO2 per capita`, color = Entity)) +
   geom_line(size = 1) +
   labs(
@@ -129,7 +129,7 @@ El comportamiento de las emisiones totales \@ref(fig:3) refuerza los hallazgos a
 
 Se puede establecer, entonces, que la cronología de las emisiones refleja claramente las etapas de industrialización. La industrialización temprana en países desarrollados causaron que históricamente fueran los principales actores en la producción de emisiones, pero que en los últimos tiempos, la industrialización tardía en economías emergentes ha causado un crecimiento en su papel global de generación de emisiones.
 
-``` {r 3, fig.cap="Gráfico de Dispersión de la Emisión Total de CO~2~ vs Temperatura Anómala", message=FALSE, warning=FALSE, echo=FALSE}
+``` {r 3, fig.cap="Gráfico de Dispersión de la Emisión Total de CO~2~ vs Temperatura Anómala", message=FALSE, warning=FALSE}
 ggplot(income_data, aes(x = Year, y = `CO2 emissions`, color = Entity)) +
   geom_line(size = 1) +
   labs(
@@ -147,7 +147,7 @@ Para complementar este análisis, usamos un diagrama de dispersión entre PIB y 
 Sin embargo, la variabilidad observada indica que no todos los países emiten al mismo nivel. Observamos  Existen economías con PIB medio cuyas emisiones superan a las de países con alto PIB, lo que sugiere diferencias en eficiencia energética, matriz energética o políticas ambientales. Pero el panorama global es clara, y la tendencia año a año muestra que los países con mayor poder ecónomico son los principales responsables de la generación de emisiones a nivel global.
 </div>
 
-``` {r 5, fig.cap="Correlación GDP vs Emisiones de CO~2~", message=FALSE, warning=FALSE, echo=FALSE, fig.width=12, fig.height=5}
+``` {r 5, fig.cap="Correlación GDP vs Emisiones de CO~2~", message=FALSE, warning=FALSE, fig.width=12, fig.height=5}
 ggplot(gdp_joined_data %>% filter(Year %in% c(1990, 2000, 2010)), aes(x = GDP, y = `Annual CO2 emissions`)) +
   geom_point() +
   geom_smooth(method = "lm", se = FALSE) +
@@ -161,7 +161,7 @@ ggplot(gdp_joined_data %>% filter(Year %in% c(1990, 2000, 2010)), aes(x = GDP, y
   theme(plot.title = element_text(hjust = 0.5))
 ```
 
-``` {r 6, fig.cap="Correlación GDP per Capita vs Emisiones de CO~2~ per Capita", message=FALSE, warning=FALSE, echo=FALSE, fig.width=12, fig.height=5}
+``` {r 6, fig.cap="Correlación GDP per Capita vs Emisiones de CO~2~ per Capita", message=FALSE, warning=FALSE, fig.width=12, fig.height=5}
 gdp_joined_data$co2_per_capita = gdp_joined_data$`Annual CO2 emissions`/gdp_joined_data$Population
 
 ggplot(gdp_joined_data %>% filter(Year %in% c(1990, 2000, 2010)), aes(x = `GDP per Capita`, y = co2_per_capita)) +
@@ -178,7 +178,7 @@ ggplot(gdp_joined_data %>% filter(Year %in% c(1990, 2000, 2010)), aes(x = `GDP p
 ```
 
 ## Analisis Regional
-``` {r climate_change_processing, message=FALSE, warning=FALSE, echo=FALSE, fig.width=12, fig.height=5}
+``` {r climate_change_processing, message=FALSE, warning=FALSE, fig.width=12, fig.height=5}
 gdp_joined_data %>% 
   inner_join(country_data, by="Country code") %>% 
   select(-`Country name`) -> gdp_joined_data2
@@ -200,7 +200,7 @@ La tendencia más notable corresponde a Asia Oriental y el Pacífico, cuyas emis
 El análisis conjunto permite establecer tres conclusiones centrales. Primero, existe una correlación positiva entre industrialización acelerada e incremento de emisiones, siendo Asia Oriental la evidencia más contundente del período. Segundo, las economías post-industriales exhiben un desacoplamiento progresivo entre PIB y emisiones, pero manteniendo una participación considerable en el total global. Tercero, la intensidad de carbono —emisiones por unidad de PIB— resulta más informativa que las emisiones absolutas para evaluar la eficiencia ambiental de una economía, ya que niveles bajos de emisión pueden reflejar simplemente un bajo nivel de desarrollo y no una transición hacia modelos productivos más limpios.
 
 
-``` {r 7, fig.cap="Emisiones por Región", message=FALSE, warning=FALSE, echo=FALSE, fig.width=12, fig.height=5}
+``` {r 7, fig.cap="Emisiones por Región", message=FALSE, warning=FALSE, fig.width=12, fig.height=5}
 ggplot(gdp_joined_data_region, aes(x = Year, y = total_emission, color = Region)) +
   geom_line(size = 1) +
   labs(
@@ -213,7 +213,7 @@ ggplot(gdp_joined_data_region, aes(x = Year, y = total_emission, color = Region)
   theme(plot.title = element_text(hjust = 0.5))
 ```
 
-``` {r 8, fig.cap="PIB por Región", message=FALSE, warning=FALSE, echo=FALSE, fig.width=12, fig.height=5}
+``` {r 8, fig.cap="PIB por Región", message=FALSE, warning=FALSE, fig.width=12, fig.height=5}
 
 ggplot(gdp_joined_data_region, aes(x = Year, y = total_gdp, color = Region)) +
   geom_line(size = 1) +
@@ -229,7 +229,7 @@ ggplot(gdp_joined_data_region, aes(x = Year, y = total_gdp, color = Region)) +
 Finalmente, analizamos la composición por niveles de ingreso de los países en cada región (\@ref(fig:9)), ordenadas de mayor a menor participación de economías de alto ingreso. Observamos que las regiones con mayor proporción de países de alto ingreso (OCDE) son las 3 regiones que encontramos contruyen mayoritariamente a la emisión de CO~2~. La información provista por esta gráfica se alinea con lo visto en (\@ref(fig:7)) y (\@ref(fig:8)).
 </div>
 
-``` {r 9, fig.cap="Distribución económica por región", message=FALSE, warning=FALSE, fig.width=12, fig.height=5, echo=FALSE}
+``` {r 9, fig.cap="Distribución económica por región", message=FALSE, warning=FALSE, fig.width=12, fig.height=5}
 country_data %>% 
   filter(Region != "Aggregates") %>% 
   count(Region, `Income group`, name = "n_count") -> income_group_per_region
@@ -271,7 +271,7 @@ Por región, el contraste es aún más pronunciado. América del Norte exhibe la
 
 La lectura conjunta de ambos gráficos refuerza una conclusión: la distribución de emisiones de CO~4~ es profundamente asimétrica tanto entre regiones como dentro de los grupos de ingreso, con un número reducido de países —caracterizados por grandes economías industriales, alta población o abundancia de recursos fósiles— concentrando la mayor parte de las emisiones globales. Esta concentración implica que las políticas de mitigación climática tienen un potencial de impacto desproporcionadamente mayor si se focalizan en dichos emisores dominantes, independientemente de su clasificación regional o de ingreso.
 
-``` {r 10, fig.cap="Distribución de emisiones por región", message=FALSE, warning=FALSE, echo=FALSE, fig.width=12, fig.height=5}
+``` {r 10, fig.cap="Distribución de emisiones por región", message=FALSE, warning=FALSE, fig.width=12, fig.height=5}
 ggplot(gdp_joined_data2[gdp_joined_data2$Year == 2010,], aes(x = factor(Region), y = `Annual CO2 emissions`, fill = Region)) +
   geom_boxplot() +
   labs(
@@ -288,7 +288,7 @@ ggplot(gdp_joined_data2[gdp_joined_data2$Year == 2010,], aes(x = factor(Region),
   theme()
 ```
 
-``` {r 11, fig.cap="Distribución de emisiones por grupo económico", message=FALSE, warning=FALSE, echo=FALSE, fig.width=12, fig.height=5}
+``` {r 11, fig.cap="Distribución de emisiones por grupo económico", message=FALSE, warning=FALSE, fig.width=12, fig.height=5}
 ggplot(gdp_joined_data2[gdp_joined_data2$Year == 2010,], aes(x = factor(`Income group`), y = `Annual CO2 emissions`, fill = `Income group`)) +
   geom_boxplot() +
   labs(
@@ -317,7 +317,7 @@ Analizamos la proyección de cambio de temperatura, desagregada por ingreso y po
 
 Las diferencias por región son más pronunciadas. Asia Oriental y el Pacífico presenta la mediana más baja (~1.7 °C) y la distribución más comprimida, posiblemente asociada a efectos moderadores de la circulación oceánica en las zonas costeras e insulares de la región. En el extremo opuesto, Oriente Medio y África del Norte, América del Norte y Asia del Sur exhiben las medianas más elevadas (~2.5 °C), con cajas amplias que denotan variabilidad interna significativa entre países. África Subsahariana y Europa y Asia Central muestran medianas intermedias (~2.3 °C) pero con bigotes que se extienden hasta valores superiores a 3.0 °C, indicando que algunos países dentro de estas regiones podrían experimentar calentamientos considerablemente más severos. América Latina y el Caribe presenta la mayor dispersión interna de todas las regiones, con una caja que abarca desde aproximadamente 1.6 °C hasta 2.3 °C, coherente con la diversidad climática de un territorio que incluye desde zonas tropicales hasta regiones subpolares.
 
-``` {r Affected_countries, message=FALSE, warning=FALSE, fig.width=12, fig.height=5, echo=FALSE}
+``` {r Affected_countries, message=FALSE, warning=FALSE, fig.width=12, fig.height=5}
 projected_temperature_change <- climate_change_data %>% 
   filter(`Series code` == "EN.CLC.PCAT.C") %>% 
   select(`Country code`, `Country name`, `2011`) %>% 
@@ -369,7 +369,7 @@ country_data %>%
   ) -> projected_climate_change_country_data
 ```
 
-```{r 12, fig.cap="Proyección de cambio de temperatura por región", message=FALSE, warning=FALSE, fig.width=12, fig.height=5, echo=FALSE}
+```{r 12, fig.cap="Proyección de cambio de temperatura por región", message=FALSE, warning=FALSE, fig.width=12, fig.height=5}
 ggplot(projected_climate_change_country_data, aes(x = factor(`Region`), y = `Temperature change`, fill = `Region`)) +
   geom_boxplot() +
   labs(
@@ -389,7 +389,7 @@ ggplot(projected_climate_change_country_data, aes(x = factor(`Region`), y = `Tem
 
 Las distribuciones por grupo económico son notablemente similares en sus medianas, oscilando entre 1.8 °C (alto ingreso no-OCDE) y 2.3 °C (bajo ingreso, ingreso medio-bajo e ingreso medio-alto). Sin embargo, la amplitud de las cajas intercuartílicas varía: los grupos de ingreso bajo e ingreso medio presentan mayor dispersión interna, reflejando la heterogeneidad geográfica de los países que los integran. El hallazgo analíticamente más relevante es la ausencia de una gradiente clara entre nivel de ingreso y magnitud del calentamiento proyectado: los países de bajo ingreso —que históricamente han contribuido de forma marginal a las emisiones acumuladas— enfrentarán incrementos de temperatura comparables o superiores a los de las economías que han sido responsables de la mayor parte de las emisiones históricas.
 
-``` {r 13, fig.cap="Proyección de cambio de temperatura por grupo ecónomico", message=FALSE, warning=FALSE, fig.width=12, fig.height=5, echo=FALSE}
+``` {r 13, fig.cap="Proyección de cambio de temperatura por grupo ecónomico", message=FALSE, warning=FALSE, fig.width=12, fig.height=5}
 ggplot(projected_climate_change_country_data, aes(x = factor(`Income group`), y = `Temperature change`, fill = `Income group`)) +
   geom_boxplot() +
   labs(
@@ -414,7 +414,7 @@ A diferencia de las proyecciones de temperatura —donde todas las regiones conv
 
 Por región, la heterogeneidad es marcada. Asia Oriental y el Pacífico presenta la mediana más alta (~+50 mm) y la mayor dispersión positiva, con outliers que superan los +300 mm, indicando que una fracción de sus países podría experimentar incrementos de precipitación muy significativos, probablemente asociados a la intensificación de sistemas oceánicos y ciclónicos. Asia del Sur y América del Norte también proyectan medianas positivas (~+50 mm y ~+30 mm respectivamente), consistentes con el reforzamiento de regímenes de precipitación en latitudes medias y subtropicales húmedas. En contraste, América Latina y el Caribe, Europa y Asia Central, y especialmente Oriente Medio y África del Norte muestran medianas negativas o cercanas a cero, con cajas que se extienden predominantemente por debajo del eje, señalando tendencias hacia la aridización. África Subsahariana presenta una distribución centrada en torno a cero pero con alta dispersión en ambas direcciones, reflejando la coexistencia de zonas con incrementos y zonas con déficits dentro de una región geográficamente extensa y climáticamente diversa.
 
-``` {r 14, fig.cap="Proyección de cambio de precipitaciones por región", message=FALSE, warning=FALSE, fig.width=12, fig.height=5, echo=FALSE}
+``` {r 14, fig.cap="Proyección de cambio de precipitaciones por región", message=FALSE, warning=FALSE, fig.width=12, fig.height=5}
 ggplot(projected_climate_change_country_data, aes(x = factor(`Region`), y = `Precipitation change`, fill = `Region`)) +
   geom_boxplot() +
   labs(
@@ -434,7 +434,7 @@ ggplot(projected_climate_change_country_data, aes(x = factor(`Region`), y = `Pre
 
 Por grupo de ingreso, el patrón más relevante es que el grupo de alto ingreso no-OCDE presenta una mediana claramente negativa (~−40 mm), coherente con la concentración de países de este grupo en zonas geográficas áridas o semiáridas como el Golfo Pérsico y partes de Europa meridional. El grupo de alto ingreso OCDE muestra una mediana levemente positiva con dispersión moderada, mientras que los grupos de ingreso bajo e ingreso medio-bajo exhiben distribuciones más amplias con medianas próximas a cero, reflejando nuevamente la heterogeneidad geográfica de sus integrantes. Los outliers más extremos —superando los +300 mm— se concentran en los grupos de ingreso medio-bajo y medio-alto, correspondientes a países tropicales de gran extensión territorial.
 
-``` {r 15, fig.cap="Proyección de cambio de precipitaciones por grupo económico", message=FALSE, warning=FALSE, fig.width=12, fig.height=5, echo=FALSE}
+``` {r 15, fig.cap="Proyección de cambio de precipitaciones por grupo económico", message=FALSE, warning=FALSE, fig.width=12, fig.height=5}
 ggplot(projected_climate_change_country_data, aes(x = factor(`Income group`), y = `Precipitation change`, fill = `Income group`)) +
   geom_boxplot() +
   labs(

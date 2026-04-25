@@ -1,15 +1,5 @@
 book_filename: "proyecto-Fabian"
 
-rmd_files:
-  - index.Rmd
-  - 01-intro.Rmd
-  - 02-objectives.Rmd
-  - 03-method.Rmd
-  - 04-data_dictionary.Rmd
-  - 05-EDA.Rmd
-  - 06-conclussions.Rmd
-  - 07-references.Rmd
-
 language:
   ui:
     chapter_name: ""

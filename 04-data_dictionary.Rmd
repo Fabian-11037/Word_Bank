@@ -4,15 +4,13 @@
 <div style="text-align: justify;">
 A continuación, realizamos una descripción breve de los campos de información encontrados en cada una de los datasets trabajados:
 </div>
-```{r import, message=FALSE, warning=FALSE, echo=FALSE}
-setwd("~/Maestria/Estadistica Computacional/Proyecto/Data")
-
-temperature_data <- read_csv("data.csv", skip = 3)
-emissions_data <- read_csv("annual-co2-emissions.csv")
-emissions_per_capita_data <- read_csv("co2-emissions-per-capita.csv")
-climate_change_data <- read_excel("climate_change.xlsx", sheet = "Data")
-country_data <- read_excel("climate_change.xlsx", sheet = "Country")
-series_data <- read_excel("climate_change.xlsx", sheet = "Series")
+```{r import, message=FALSE, warning=FALSE}
+temperature_data <- read_csv("./Data/data.csv", skip = 3)
+emissions_data <- read_csv("./Data/annual-co2-emissions.csv")
+emissions_per_capita_data <- read_csv("./Data/co2-emissions-per-capita.csv")
+climate_change_data <- read_excel("./Data/climate_change.xlsx", sheet = "Data")
+country_data <- read_excel("./Data/climate_change.xlsx", sheet = "Country")
+series_data <- read_excel("./Data/climate_change.xlsx", sheet = "Series")
 
 ```
 

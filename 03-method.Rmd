@@ -15,18 +15,18 @@ Los datos de los diferentes conjuntos de datos fueron importados, transformados 
 
 Las librerías utilizadas fueron: 
 
-* ggplot2 [@ggplot2]
-* dplyr [@dplyr]
-* tidyr [@tidyr]
-* readr [@readr]
-* tidyverse [@tidyverse] 
-* readxl [@readxl]
-* knitr [@knitr].
+* ggplot2 [@R-ggplot2]
+* dplyr [@R-dplyr]
+* tidyr [@R-tidyr]
+* readr [@R-readr]
+* tidyverse [@R-tidyverse] 
+* readxl [@R-readxl]
+* knitr [@R-knitr].
 
 </div>
 
 ## Importación de Librerías a usar
-```{r setup, message=FALSE, warning=FALSE, echo=FALSE}
+```{r setup, message=FALSE, warning=FALSE}
 library(dplyr)
 library(ggplot2)
 library(tidyr)
