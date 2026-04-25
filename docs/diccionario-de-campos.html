@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Diccionario de Campos | Calentamiento Global, Emisiones de Dióxido de Carbono y Crecimiento Económico: Una Perspectiva Regional y Económica</title>
+  <meta name="description" content="Artículo realizado para la clase de Estadística Computacional en la Maestría de Estadística Aplicada" />
+  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Diccionario de Campos | Calentamiento Global, Emisiones de Dióxido de Carbono y Crecimiento Económico: Una Perspectiva Regional y Económica" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Artículo realizado para la clase de Estadística Computacional en la Maestría de Estadística Aplicada" />
+  <meta name="github-repo" content="https://github.com/Fabian-11037/Word_Bank" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Diccionario de Campos | Calentamiento Global, Emisiones de Dióxido de Carbono y Crecimiento Económico: Una Perspectiva Regional y Económica" />
+  
+  <meta name="twitter:description" content="Artículo realizado para la clase de Estadística Computacional en la Maestría de Estadística Aplicada" />
+  
+
+<meta name="author" content="Fabian Manrique" />
+
+
+<meta name="date" content="2026-04-24" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="metodología.html"/>
+<link rel="next" href="análisis-exploratorio-de-datos.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Resumen</a></li>
+<li class="chapter" data-level="" data-path="introducción.html"><a href="introducción.html"><i class="fa fa-check"></i>Introducción</a></li>
+<li class="chapter" data-level="" data-path="objetivos.html"><a href="objetivos.html"><i class="fa fa-check"></i>Objetivos</a>
+<ul>
+<li class="chapter" data-level="" data-path="objetivos.html"><a href="objetivos.html#objetivo-general"><i class="fa fa-check"></i>Objetivo General</a></li>
+<li class="chapter" data-level="" data-path="objetivos.html"><a href="objetivos.html#objetivos-espec%C3%ADficos"><i class="fa fa-check"></i>Objetivos Específicos</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="metodología.html"><a href="metodología.html"><i class="fa fa-check"></i>Metodología</a>
+<ul>
+<li class="chapter" data-level="" data-path="metodología.html"><a href="metodología.html#origen-de-los-datos"><i class="fa fa-check"></i>Origen de los Datos</a></li>
+<li class="chapter" data-level="" data-path="metodología.html"><a href="metodología.html#procesamiento-de-datos"><i class="fa fa-check"></i>Procesamiento de Datos</a></li>
+<li class="chapter" data-level="" data-path="metodología.html"><a href="metodología.html#importaci%C3%B3n-de-librer%C3%ADas-a-usar"><i class="fa fa-check"></i>Importación de Librerías a usar</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="diccionario-de-campos.html"><a href="diccionario-de-campos.html"><i class="fa fa-check"></i>Diccionario de Campos</a>
+<ul>
+<li class="chapter" data-level="" data-path="diccionario-de-campos.html"><a href="diccionario-de-campos.html#importaci%C3%B3n-de-datos"><i class="fa fa-check"></i>Importación de Datos</a></li>
+<li class="chapter" data-level="" data-path="diccionario-de-campos.html"><a href="diccionario-de-campos.html#dataset-annual-co2-emissions"><i class="fa fa-check"></i>Dataset ‘Annual CO<sub>2</sub> Emissions’</a></li>
+<li class="chapter" data-level="" data-path="diccionario-de-campos.html"><a href="diccionario-de-campos.html#dataset-co2-emissions-per-capita"><i class="fa fa-check"></i>Dataset ‘CO<sub>2</sub> Emissions per Capita’</a></li>
+<li class="chapter" data-level="" data-path="diccionario-de-campos.html"><a href="diccionario-de-campos.html#dataset-global-land-and-ocean-12-month-period-average-temperature-anomalies"><i class="fa fa-check"></i>Dataset ‘Global Land and Ocean 12-Month Period Average Temperature Anomalies’</a></li>
+<li class="chapter" data-level="" data-path="diccionario-de-campos.html"><a href="diccionario-de-campos.html#dataset-climate-change-data"><i class="fa fa-check"></i>Dataset ‘Climate Change Data’</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="análisis-exploratorio-de-datos.html"><a href="análisis-exploratorio-de-datos.html"><i class="fa fa-check"></i>Análisis Exploratorio de Datos</a>
+<ul>
+<li class="chapter" data-level="" data-path="análisis-exploratorio-de-datos.html"><a href="análisis-exploratorio-de-datos.html#procesamiento-de-datos-1"><i class="fa fa-check"></i>Procesamiento de Datos</a></li>
+<li class="chapter" data-level="" data-path="análisis-exploratorio-de-datos.html"><a href="análisis-exploratorio-de-datos.html#relaci%C3%B3n-hist%C3%B3rica-entre-emisiones-de-co2-y-aumento-de-la-temperatura-promedio-global."><i class="fa fa-check"></i>Relación histórica entre emisiones de CO<sub>2</sub> y aumento de la temperatura promedio global.</a></li>
+<li class="chapter" data-level="" data-path="análisis-exploratorio-de-datos.html"><a href="análisis-exploratorio-de-datos.html#emisiones-de-co2-y-el-desarrollo-ec%C3%B3nomico."><i class="fa fa-check"></i>Emisiones de CO<sub>2</sub> y el desarrollo ecónomico.</a></li>
+<li class="chapter" data-level="" data-path="análisis-exploratorio-de-datos.html"><a href="análisis-exploratorio-de-datos.html#analisis-regional"><i class="fa fa-check"></i>Analisis Regional</a></li>
+<li class="chapter" data-level="" data-path="análisis-exploratorio-de-datos.html"><a href="análisis-exploratorio-de-datos.html#analisis-de-distribuci%C3%B3n-de-emisiones-regional-y-econ%C3%B3mica"><i class="fa fa-check"></i>Analisis de distribución de emisiones regional y económica</a></li>
+<li class="chapter" data-level="" data-path="análisis-exploratorio-de-datos.html"><a href="análisis-exploratorio-de-datos.html#an%C3%A1lisis-de-proyecciones"><i class="fa fa-check"></i>Análisis de Proyecciones</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="conclusiones.html"><a href="conclusiones.html"><i class="fa fa-check"></i>Conclusiones</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Calentamiento Global, Emisiones de Dióxido de Carbono y Crecimiento Económico: Una Perspectiva Regional y Económica</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="diccionario-de-campos" class="section level1 hasAnchor">
+<h1>Diccionario de Campos<a href="diccionario-de-campos.html#diccionario-de-campos" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="importación-de-datos" class="section level2 hasAnchor">
+<h2>Importación de Datos<a href="diccionario-de-campos.html#importaci%C3%B3n-de-datos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div style="text-align: justify;">
+<p>A continuación, realizamos una descripción breve de los campos de información encontrados en cada una de los datasets trabajados:</p>
+</div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="diccionario-de-campos.html#cb2-1" tabindex="-1"></a>temperature_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;./Data/data.csv&quot;</span>, <span class="at">skip =</span> <span class="dv">3</span>)</span>
+<span id="cb2-2"><a href="diccionario-de-campos.html#cb2-2" tabindex="-1"></a>emissions_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;./Data/annual-co2-emissions.csv&quot;</span>)</span>
+<span id="cb2-3"><a href="diccionario-de-campos.html#cb2-3" tabindex="-1"></a>emissions_per_capita_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;./Data/co2-emissions-per-capita.csv&quot;</span>)</span>
+<span id="cb2-4"><a href="diccionario-de-campos.html#cb2-4" tabindex="-1"></a>climate_change_data <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;./Data/climate_change.xlsx&quot;</span>, <span class="at">sheet =</span> <span class="st">&quot;Data&quot;</span>)</span>
+<span id="cb2-5"><a href="diccionario-de-campos.html#cb2-5" tabindex="-1"></a>country_data <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;./Data/climate_change.xlsx&quot;</span>, <span class="at">sheet =</span> <span class="st">&quot;Country&quot;</span>)</span>
+<span id="cb2-6"><a href="diccionario-de-campos.html#cb2-6" tabindex="-1"></a>series_data <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;./Data/climate_change.xlsx&quot;</span>, <span class="at">sheet =</span> <span class="st">&quot;Series&quot;</span>)</span></code></pre></div>
+</div>
+<div id="dataset-annual-co2-emissions" class="section level2 hasAnchor">
+<h2>Dataset ‘Annual CO<sub>2</sub> Emissions’<a href="diccionario-de-campos.html#dataset-annual-co2-emissions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div style="text-align: justify;">
+<p>Obtenido de <span class="citation">(<a href="#ref-ref1">Ritchie et al., 2023</a>)</span>, este dataset nos provee información histórica de las emisiones totales de cada entidad o país desde el año 1949.</p>
+<table>
+<colgroup>
+<col width="41%" />
+<col width="58%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Entity</td>
+<td>País o agrupación de paises</td>
+</tr>
+<tr class="even">
+<td>Code</td>
+<td>Código ISO-Alpha 3 (país) u OWID (agrupación) de la entidad</td>
+</tr>
+<tr class="odd">
+<td>Year</td>
+<td>Año de muestreo del dato</td>
+</tr>
+<tr class="even">
+<td>CO<sub>2</sub> emissions</td>
+<td>Total emitido por la entidad en el año en cuestión en Toneladas</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="diccionario-de-campos.html#cb3-1" tabindex="-1"></a><span class="fu">str</span>(emissions_data) <span class="sc">%&gt;%</span> <span class="fu">kable</span>()</span></code></pre></div>
+<pre><code>## spc_tbl_ [29,384 × 4] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
+##  $ Entity              : chr [1:29384] &quot;Afghanistan&quot; &quot;Afghanistan&quot; &quot;Afghanistan&quot; &quot;Afghanistan&quot; ...
+##  $ Code                : chr [1:29384] &quot;AFG&quot; &quot;AFG&quot; &quot;AFG&quot; &quot;AFG&quot; ...
+##  $ Year                : num [1:29384] 1949 1950 1951 1952 1953 ...
+##  $ Annual CO₂ emissions: num [1:29384] 14656 84272 91600 91600 106256 ...
+##  - attr(*, &quot;spec&quot;)=
+##   .. cols(
+##   ..   Entity = col_character(),
+##   ..   Code = col_character(),
+##   ..   Year = col_double(),
+##   ..   `Annual CO₂ emissions` = col_double()
+##   .. )
+##  - attr(*, &quot;problems&quot;)=&lt;externalptr&gt;</code></pre>
+</div>
+<div id="dataset-co2-emissions-per-capita" class="section level2 hasAnchor">
+<h2>Dataset ‘CO<sub>2</sub> Emissions per Capita’<a href="diccionario-de-campos.html#dataset-co2-emissions-per-capita" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div style="text-align: justify;">
+<p>Obtenido de <span class="citation">(<a href="#ref-ref1">Ritchie et al., 2023</a>)</span>, este dataset nos provee información histórica de las emisiones per capita de cada entidad o país desde el año 1949.</p>
+<table>
+<colgroup>
+<col width="41%" />
+<col width="58%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Entity</td>
+<td>País o agrupación de paises</td>
+</tr>
+<tr class="even">
+<td>Code</td>
+<td>Código ISO-Alpha 3 (país) u OWID (agrupación) de la entidad</td>
+</tr>
+<tr class="odd">
+<td>Year</td>
+<td>Year of the data</td>
+</tr>
+<tr class="even">
+<td>CO<sub>2</sub> emissions per capita</td>
+<td>Total emitido por la entidad dividido por la población en el año en cuestión en Toneladas por persona</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="diccionario-de-campos.html#cb5-1" tabindex="-1"></a><span class="fu">str</span>(emissions_per_capita_data) <span class="sc">%&gt;%</span> <span class="fu">kable</span>()</span></code></pre></div>
+<pre><code>## spc_tbl_ [26,509 × 4] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
+##  $ Entity                  : chr [1:26509] &quot;Afghanistan&quot; &quot;Afghanistan&quot; &quot;Afghanistan&quot; &quot;Afghanistan&quot; ...
+##  $ Code                    : chr [1:26509] &quot;AFG&quot; &quot;AFG&quot; &quot;AFG&quot; &quot;AFG&quot; ...
+##  $ Year                    : num [1:26509] 1949 1950 1951 1952 1953 ...
+##  $ CO₂ emissions per capita: num [1:26509] 0.00199 0.01084 0.01163 0.01147 0.01312 ...
+##  - attr(*, &quot;spec&quot;)=
+##   .. cols(
+##   ..   Entity = col_character(),
+##   ..   Code = col_character(),
+##   ..   Year = col_double(),
+##   ..   `CO₂ emissions per capita` = col_double()
+##   .. )
+##  - attr(*, &quot;problems&quot;)=&lt;externalptr&gt;</code></pre>
+</div>
+<div id="dataset-global-land-and-ocean-12-month-period-average-temperature-anomalies" class="section level2 hasAnchor">
+<h2>Dataset ‘Global Land and Ocean 12-Month Period Average Temperature Anomalies’<a href="diccionario-de-campos.html#dataset-global-land-and-ocean-12-month-period-average-temperature-anomalies" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div style="text-align: justify;">
+<p>Obtenido de <span class="citation">(<a href="#ref-ref159">NCEI, 2026</a>)</span>, este dataset nos provee información histórica de la temperatura anómala global promedio por mes desde diciembre de 1850.</p>
+<table>
+<colgroup>
+<col width="41%" />
+<col width="58%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Date</td>
+<td>Mes de muestreo del dato en formato YYYYMM</td>
+</tr>
+<tr class="even">
+<td>Anomaly</td>
+<td>Temperatura anómala, calculada como la diferencia entre la temperatura global promedio y la temperatura global promedio entre los años 1861 a 1890, en Celsius</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="diccionario-de-campos.html#cb7-1" tabindex="-1"></a><span class="fu">str</span>(temperature_data) <span class="sc">%&gt;%</span> <span class="fu">kable</span>()</span></code></pre></div>
+<pre><code>## spc_tbl_ [2,104 × 2] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
+##  $ Date   : num [1:2104] 185012 185101 185102 185103 185104 ...
+##  $ Anomaly: num [1:2104] -0.15 -0.13 -0.13 -0.13 -0.12 -0.12 -0.12 -0.11 -0.09 -0.08 ...
+##  - attr(*, &quot;spec&quot;)=
+##   .. cols(
+##   ..   Date = col_double(),
+##   ..   Anomaly = col_double()
+##   .. )
+##  - attr(*, &quot;problems&quot;)=&lt;externalptr&gt;</code></pre>
+</div>
+<div id="dataset-climate-change-data" class="section level2 hasAnchor">
+<h2>Dataset ‘Climate Change Data’<a href="diccionario-de-campos.html#dataset-climate-change-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div style="text-align: justify;">
+<p>Obtenido de <span class="citation">(<a href="#ref-ref155">World Bank, 2023</a>)</span>, este dataset nos provee información histórica diferentes variables climaticas y geopolíticas de los países del mundo, desde el año 1990.</p>
+<table>
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Country code</td>
+<td>Código ISO-Alpha 3 (país) u OWID (agrupación) de la entidad</td>
+</tr>
+<tr class="even">
+<td>Country Name</td>
+<td>Nombre de la agrupación o país</td>
+</tr>
+<tr class="odd">
+<td>Series Code</td>
+<td>Código de la variable muestreada</td>
+</tr>
+<tr class="even">
+<td>Series Name</td>
+<td>Nombre de la variable muestreada</td>
+</tr>
+<tr class="odd">
+<td>1990 - 2011</td>
+<td>Columnas que corresponden al año de muestreo. Para algunas variables, como proyecciones a futuro, solo se encuentra data en la columna 2011, correspondiente al valor de la proyección</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="diccionario-de-campos.html#cb9-1" tabindex="-1"></a><span class="fu">str</span>(climate_change_data) <span class="sc">%&gt;%</span> <span class="fu">kable</span>()</span></code></pre></div>
+<pre><code>## tibble [13,512 × 28] (S3: tbl_df/tbl/data.frame)
+##  $ Country code: chr [1:13512] &quot;ABW&quot; &quot;ADO&quot; &quot;AFG&quot; &quot;AGO&quot; ...
+##  $ Country name: chr [1:13512] &quot;Aruba&quot; &quot;Andorra&quot; &quot;Afghanistan&quot; &quot;Angola&quot; ...
+##  $ Series code : chr [1:13512] &quot;AG.LND.EL5M.ZS&quot; &quot;AG.LND.EL5M.ZS&quot; &quot;AG.LND.EL5M.ZS&quot; &quot;AG.LND.EL5M.ZS&quot; ...
+##  $ Series name : chr [1:13512] &quot;Land area below 5m (% of land area)&quot; &quot;Land area below 5m (% of land area)&quot; &quot;Land area below 5m (% of land area)&quot; &quot;Land area below 5m (% of land area)&quot; ...
+##  $ SCALE       : num [1:13512] 0 0 0 0 0 0 0 0 0 0 ...
+##  $ Decimals    : num [1:13512] 1 1 1 1 1 1 1 1 1 1 ...
+##  $ 1990        : chr [1:13512] &quot;29.574809999999999&quot; &quot;0&quot; &quot;0&quot; &quot;0.20823459999999999&quot; ...
+##  $ 1991        : chr [1:13512] &quot;..&quot; &quot;..&quot; &quot;..&quot; &quot;..&quot; ...
+##  $ 1992        : chr [1:13512] &quot;..&quot; &quot;..&quot; &quot;..&quot; &quot;..&quot; ...
+##  $ 1993        : chr [1:13512] &quot;..&quot; &quot;..&quot; &quot;..&quot; &quot;..&quot; ...
+##  $ 1994        : chr [1:13512] &quot;..&quot; &quot;..&quot; &quot;..&quot; &quot;..&quot; ...
+##  $ 1995        : chr [1:13512] &quot;..&quot; &quot;..&quot; &quot;..&quot; &quot;..&quot; ...
+##  $ 1996        : chr [1:13512] &quot;..&quot; &quot;..&quot; &quot;..&quot; &quot;..&quot; ...
+##  $ 1997        : chr [1:13512] &quot;..&quot; &quot;..&quot; &quot;..&quot; &quot;..&quot; ...
+##  $ 1998        : chr [1:13512] &quot;..&quot; &quot;..&quot; &quot;..&quot; &quot;..&quot; ...
+##  $ 1999        : chr [1:13512] &quot;..&quot; &quot;..&quot; &quot;..&quot; &quot;..&quot; ...
+##  $ 2000        : chr [1:13512] &quot;29.574809999999999&quot; &quot;0&quot; &quot;0&quot; &quot;0.20823459999999999&quot; ...
+##  $ 2001        : chr [1:13512] &quot;..&quot; &quot;..&quot; &quot;..&quot; &quot;..&quot; ...
+##  $ 2002        : chr [1:13512] &quot;..&quot; &quot;..&quot; &quot;..&quot; &quot;..&quot; ...
+##  $ 2003        : chr [1:13512] &quot;..&quot; &quot;..&quot; &quot;..&quot; &quot;..&quot; ...
+##  $ 2004        : chr [1:13512] &quot;..&quot; &quot;..&quot; &quot;..&quot; &quot;..&quot; ...
+##  $ 2005        : chr [1:13512] &quot;..&quot; &quot;..&quot; &quot;..&quot; &quot;..&quot; ...
+##  $ 2006        : chr [1:13512] &quot;..&quot; &quot;..&quot; &quot;..&quot; &quot;..&quot; ...
+##  $ 2007        : chr [1:13512] &quot;..&quot; &quot;..&quot; &quot;..&quot; &quot;..&quot; ...
+##  $ 2008        : chr [1:13512] &quot;..&quot; &quot;..&quot; &quot;..&quot; &quot;..&quot; ...
+##  $ 2009        : chr [1:13512] &quot;..&quot; &quot;..&quot; &quot;..&quot; &quot;..&quot; ...
+##  $ 2010        : chr [1:13512] &quot;..&quot; &quot;..&quot; &quot;..&quot; &quot;..&quot; ...
+##  $ 2011        : chr [1:13512] &quot;..&quot; &quot;..&quot; &quot;..&quot; &quot;..&quot; ...</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="diccionario-de-campos.html#cb11-1" tabindex="-1"></a><span class="fu">str</span>(country_data) <span class="sc">%&gt;%</span> <span class="fu">kable</span>()</span></code></pre></div>
+<pre><code>## tibble [233 × 6] (S3: tbl_df/tbl/data.frame)
+##  $ Country code    : chr [1:233] &quot;EAP&quot; &quot;ECA&quot; &quot;EMU&quot; &quot;HIC&quot; ...
+##  $ Country name    : chr [1:233] &quot;East Asia &amp; Pacific&quot; &quot;Europe &amp; Central Asia&quot; &quot;Euro area&quot; &quot;High income&quot; ...
+##  $ Capital city    : chr [1:233] &quot;..&quot; &quot;..&quot; &quot;..&quot; &quot;..&quot; ...
+##  $ Region          : chr [1:233] &quot;Aggregates&quot; &quot;Aggregates&quot; &quot;Aggregates&quot; &quot;Aggregates&quot; ...
+##  $ Income group    : chr [1:233] &quot;Aggregates&quot; &quot;Aggregates&quot; &quot;Aggregates&quot; &quot;Aggregates&quot; ...
+##  $ Lending category: chr [1:233] &quot;Aggregates&quot; &quot;Aggregates&quot; &quot;Aggregates&quot; &quot;Aggregates&quot; ...</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="diccionario-de-campos.html#cb13-1" tabindex="-1"></a><span class="fu">str</span>(series_data) <span class="sc">%&gt;%</span> <span class="fu">kable</span>()</span></code></pre></div>
+<pre><code>## tibble [58 × 8] (S3: tbl_df/tbl/data.frame)
+##  $ Series code: chr [1:58] &quot;SP.POP.TOTL&quot; &quot;SP.POP.GROW&quot; &quot;NY.GDP.MKTP.CD&quot; &quot;NY.GNP.PCAP.CD&quot; ...
+##  $ Series name: chr [1:58] &quot;Population&quot; &quot;Population growth (annual %)&quot; &quot;GDP ($)&quot; &quot;GNI per capita (Atlas $)&quot; ...
+##  $ Scale      : chr [1:58] &quot;0&quot; &quot;0&quot; &quot;0&quot; &quot;0&quot; ...
+##  $ Decimals   : chr [1:58] &quot;0&quot; &quot;1&quot; &quot;0&quot; &quot;0&quot; ...
+##  $ Order      : num [1:58] 1 2 3 4 5 6 7 8 9 10 ...
+##  $ Topic      : chr [1:58] &quot;Size of the economy&quot; &quot;Size of the economy&quot; &quot;Size of the economy&quot; &quot;Size of the economy&quot; ...
+##  $ Definition : chr [1:58] &quot;Population includes all residents who are present regardless of legal status or citizenship except for refugees&quot;| __truncated__ &quot;Annual population growth rate for year t is the exponential rate of growth of midyear population from year t-1 &quot;| __truncated__ &quot;GDP is gross domestic product and measures the total output of goods and services for final use occurring withi&quot;| __truncated__ &quot;GNI per capita is the gross national income, converted to U.S. dollars using the World Bank Atlas method, divid&quot;| __truncated__ ...
+##  $ Source     : chr [1:58] &quot;(1) United Nations Population Division. 2011. World Population Prospects: The 2010 Revision. New York, United N&quot;| __truncated__ &quot;Derived from total population. Population source: (1) United Nations Population Division. 2011. World Populatio&quot;| __truncated__ &quot;World Bank national accounts data, and OECD National Accounts data files.&quot; &quot;World Bank national accounts data, and OECD National Accounts data files.&quot; ...</code></pre>
+<ul>
+<li>Variables utilizadas:</li>
+</ul>
+<table>
+<colgroup>
+<col width="17%" />
+<col width="17%" />
+<col width="64%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Codigo</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Population</td>
+<td>SP.POP.TOTL</td>
+<td>Población de la entidad</td>
+</tr>
+<tr class="even">
+<td>GDP</td>
+<td>NY.GDP.MKTP.CD</td>
+<td>PIB total en doláres de la entidad</td>
+</tr>
+<tr class="odd">
+<td>Projected annual temperature change (2045-2065, Celsius)</td>
+<td>EN.CLC.PCAT.C</td>
+<td>Cambio de temperatura proyectado para el periodo 2045 a 2065 en Celsius</td>
+</tr>
+<tr class="even">
+<td>Projected annual precipitation change (2045-2065, mm)</td>
+<td>EN.CLC.PCPT.MM</td>
+<td>Cambio en total de precipitaciones proyectado para el periodo de 2045 a 2065, en mm</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</div>
+</div>
+<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0" line-spacing="2">
+<div id="ref-ref159" class="csl-entry">
+NCEI. (2026). <em>Climate at a glance: Global time series</em>. National Centers for Environmental Information. <a href="https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/global/time-series">https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/global/time-series</a>
+</div>
+<div id="ref-ref1" class="csl-entry">
+Ritchie, H., Rosado, P., &amp; Roser, M. (2023). CO2 and greenhouse gas emissions. <em>Our World in Data</em>. <a href="https://ourworldindata.org/co2-and-greenhouse-gas-emissions">https://ourworldindata.org/co2-and-greenhouse-gas-emissions</a>
+</div>
+<div id="ref-ref155" class="csl-entry">
+World Bank. (2023). <em>Climate change data - world bank data catalog</em>. <a href="https://datacatalog.worldbank.org/search/dataset/0040205/climate-change-data">https://datacatalog.worldbank.org/search/dataset/0040205/climate-change-data</a>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="metodología.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="análisis-exploratorio-de-datos.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/rstudio/bookdown-demo/edit/master/04-data_dictionary.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["proyecto-Fabian.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+</body>
+
+</html>

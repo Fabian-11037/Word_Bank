@@ -1,0 +1,29 @@
+#refs .csl-entry::before {
+  list-style-type: "* ";
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: 700;
+  border-bottom: 2px solid #333;
+  margin-top: 30px;
+}
+
+h2 {
+  font-size: 26px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-top: 25px;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #34495e;
+}
+
+h4 {
+  font-size: 17px;
+  font-style: italic;
+  color: #555;
+}
